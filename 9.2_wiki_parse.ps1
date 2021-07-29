@@ -5,5 +5,5 @@ $count_word = ($split_text | ForEach-Object -Begin { $wordCounts=@{} } -Process 
 $number = 0
 foreach($count in $count_word[-1..-10]) {
     $number = $number + 1
-    [string]$number+' ' + $count.name + ' ' + $count.value
+    [string]$number+ ' ' + $count.name + ' ' + $count.value
 }
