@@ -1,4 +1,4 @@
-function Get-Files{
+function Remove_files{
     [CmdletBinding()]
     param (
         [string]$path = '.\'
@@ -9,7 +9,7 @@ function Get-Files{
     }
     
     process {
-        Get-ChildItem $path -Recurse | Sort-Object Length -Descending  | where {$_.Length -lt .0.0005KB} | Remove-Item -Force-Recurse 
+        Get-ChildItem $path -Recurse | Sort-Object Length -Descending  | where {$_.Length -gt 500000} | Remove-Item -Force -Recurse 
     }
     
     end {
