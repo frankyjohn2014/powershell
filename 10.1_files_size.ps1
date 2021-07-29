@@ -1,0 +1,1 @@
+Get-ChildItem 'C:\Python39' -recurse | Select-Object Mode,Name,LastWriteTime, @{Name="MegaBytes";Expression={"{0:F2}" -f ($_.length/1MB)}} 
